@@ -20,7 +20,9 @@ function Header() {
    {
     isSignedIn? 
     <div className='user_section'>
+        <Link to={'/dashboard'}>
         <Button>DahsBoard </Button>
+        </Link>
         <UserButton/>
     </div>
     : <Link to={'/auth/signpage'}></Link>

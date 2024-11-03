@@ -1,5 +1,5 @@
 {
-  "name": "ai-resume-maker",
+  "name": "resume-ai",
   "version": "0.1.0",
   "private": true,
   "description": "A Strapi application",
@@ -14,7 +14,7 @@
     "@strapi/plugin-cloud": "5.2.0",
     "@strapi/plugin-users-permissions": "5.2.0",
     "@strapi/strapi": "5.2.0",
-    "mysql2": "3.9.8",
+    "better-sqlite3": "11.3.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
@@ -26,6 +26,6 @@
     "npm": ">=6.0.0"
   },
   "strapi": {
-    "uuid": "fd495d61-605f-4d32-bf20-1fd236129be7"
+    "uuid": "598d9cab-a81c-4291-b31d-c921e5fd2c5c"
   }
 }
