@@ -12,17 +12,17 @@
   "pluginOptions": {},
   "attributes": {
     "Name": {
-      "type": "text",
+      "type": "string",
       "required": true
+    },
+    "userEmail": {
+      "type": "string"
     },
     "resumeid": {
       "type": "string"
     },
-    "email": {
-      "type": "email"
-    },
     "userPhoneNo": {
-      "type": "integer"
+      "type": "string"
     }
   }
 }

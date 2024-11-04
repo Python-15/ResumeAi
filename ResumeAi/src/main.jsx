@@ -4,6 +4,7 @@ import './index.css'
 import App from './App.jsx'
 import SigninPage from './auth/signin'
 import Home from './home/Home'
+import Edit from './home/dshaboard/resume/[resumeid]/Edit'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -19,37 +20,34 @@ if (!PUBLISHABLE_KEY) {
 }
 const resumeRoute = createBrowserRouter([
 
-  {// this is the default path for react router 
-    
-    element:<App/>,
-    /* app will be the default layout inside that we have dashboard 
-      create resume and update resume so we add children inside app for routes
-      and we will be using <outlet/>
-      */
+  {
+    path: '/',
+    element: <App />,
     children: [
-      
       {
-        path: '/dashboard',
-        element: <DahsBoard/>
+        index: true,
+        element: <Home />
+      },
+      {
+        path: 'dashboard',
+        element: <DahsBoard />
+      },
+      {
+        path: 'dashboard/resume/:resumeId/edit',
+        element: <Edit />
       }
     ]
-    
   },
   {
-    path: '/', //default path
-    element: <Home />
-
-  },
-  {
-    path:"auth/signpage",
-    element: <SigninPage/>
+    path: 'auth/signpage',
+    element: <SigninPage />
   }
-]
-);
+]);
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
- <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
- < RouterProvider router={resumeRoute}/>
-  </ClerkProvider>
-  </StrictMode>,
-)
+    <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
+      <RouterProvider router={resumeRoute} />
+    </ClerkProvider>
+  </StrictMode>
+);
