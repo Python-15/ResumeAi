@@ -1,14 +1,54 @@
-import React, { useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import FormSection from '../../component/FormSection';
+import PreviewSection from '../../component/PreviewSection';
+import { ResumeContext } from '@/context/ResumeInfoContext';
+import mockdata from '@/data/dummy';
+import './style.css'
+  function Edit() {
+  const params =  useParams();
 
-function Edit() {
-  const params = useParams();
-  useEffect(()=>{
-    console.log('params---> ', params)
-  },[params])
+
+
+  const [resumeInfo, setResumeInfo] = useState(null);
+  const [loading, setLoading] = useState(true); // Loading state
+
+  useEffect(() => {
+    console.log('params---> ', params);
+    console.log('mockdata---> ', mockdata); // Log mockdata
+
+    // Simulate data fetching or use setTimeout to mimic asynchronous behavior
+    setTimeout(() => {
+      setResumeInfo(mockdata);
+      setLoading(false); // Data is loaded
+    }, 1000); // Simulate a 1 second delay
+  }, [params]);
+
+  useEffect(() => {
+    console.log('resume info---> ', resumeInfo);
+  }, [resumeInfo]);
+
+  // Show a loading message while fetching data
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+
   return (
-    <div>Edit</div>
-  )
+    <ResumeContext.Provider value={{ resumeInfo, setResumeInfo }}>
+      <div className=" p-10 h-screen Edit_screen">
+        {/* Preview Section on the left, taking up 50% of the width */}
+      
+          
+       
+        {/* Form Section on the right, taking up 50% of the width */}
+        
+          <FormSection />
+          <PreviewSection />
+        
+      </div>
+    </ResumeContext.Provider>
+  );
 }
 
-export default Edit
+export default Edit;

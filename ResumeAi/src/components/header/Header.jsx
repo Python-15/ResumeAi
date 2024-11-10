@@ -10,7 +10,7 @@ function Header() {
   return (
     <>
    <div className='resumeLogo'>
-   <img src="public/resumemaker.svg" alt="Resume Maker Logo" className="fixed-image" />
+   <img src="public/resumemaker.svg"  className="fixed-image" />
    <Link to={'/auth/signpage'}>
    {!isSignedIn?
    <Button>Build Your's</Button> :null
