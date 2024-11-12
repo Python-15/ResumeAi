@@ -1,5 +1,4 @@
  const SkillsPreview= ({ resumeInfo }) => {
-    console.log(resumeInfo?.skills[0].name, '  skillss')
     return (
      
             <div className='my-6'>

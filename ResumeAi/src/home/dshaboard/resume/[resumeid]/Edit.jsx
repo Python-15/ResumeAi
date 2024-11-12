@@ -4,6 +4,7 @@ import FormSection from '../../component/FormSection';
 import PreviewSection from '../../component/PreviewSection';
 import { ResumeContext } from '@/context/ResumeInfoContext';
 import mockdata from '@/data/dummy';
+import apiServices from '../../../../../apiServices/apiServices'
 import './style.css'
   function Edit() {
   const params =  useParams();
@@ -14,8 +15,7 @@ import './style.css'
   const [loading, setLoading] = useState(true); // Loading state
 
   useEffect(() => {
-    console.log('params---> ', params);
-    console.log('mockdata---> ', mockdata); // Log mockdata
+  // Log mockdata
 
     // Simulate data fetching or use setTimeout to mimic asynchronous behavior
     setTimeout(() => {
@@ -23,10 +23,11 @@ import './style.css'
       setLoading(false); // Data is loaded
     }, 1000); // Simulate a 1 second delay
   }, [params]);
-
+  
   useEffect(() => {
-    console.log('resume info---> ', resumeInfo);
-  }, [resumeInfo]);
+    
+    
+  }, []);
 
   // Show a loading message while fetching data
   if (loading) {

@@ -1,23 +1,21 @@
-import React from 'react'
+import React from 'react';
 
-function SummaryInfo({resumeInfo}){
-    return (
-        <div>
-           
-    <p className='text-xs'>
-    <h2
-          className="text-center font-bold text-sm mb-2"
-          style={{
-            color: resumeInfo?.themeColor,
-          }}
-        >
-          Summery
-        </h2>
+function SummaryInfo({ resumeInfo }) {
+  return (
+    <div>
+      <h2
+        className="text-center font-bold text-sm mb-2"
+        style={{
+          color: resumeInfo?.themeColor,
+        }}
+      >
+        Summary
+      </h2>
+      <p className="text-xs">
         {resumeInfo?.summery}
-    </p>
-  
-        </div>
-    )
-
+      </p>
+    </div>
+  );
 }
+
 export default SummaryInfo;

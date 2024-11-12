@@ -12,8 +12,10 @@ const axiosClient = axios.create({
 
 const createResume = (data) => axiosClient.post('/user-resumes', data);
 const getResumeDetails = (useremail) => axiosClient.get('/user-resumes', useremail)// we will be fetching based on useremail
-
+const updatePersonalDetails =(documentId,data)=>axiosClient.put('/user-resumes/'+documentId ,data)
 export default {
     createResume,
-    getResumeDetails
+    getResumeDetails,
+    updatePersonalDetails
+    
 }; 

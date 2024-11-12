@@ -13,12 +13,12 @@ function PreviewSection() {
   return (
     <div className="previewsection w-full max-w-[800px] mx-auto p-8 bg-white shadow-xl rounded-lg">
       {/* Personal Information */}
-      <div className="border-b-2 pb-4 mb-4">
+      <div className="pb-4 mb-4">
         <PersonalInformation resumeInfo={resumeInfo} />
       </div>
       
       {/* Summary */}
-      <div className="border-b-2 pb-4 mb-4">
+      <div className=" pb-4 mb-4">
         <SummaryInfo resumeInfo={resumeInfo} />
       </div>
 

@@ -7,7 +7,7 @@ function ResumeList(resumesItems) {
    
   return (
   <div>
-      <Link to={'/dashboard/resume/' + resumesItems.resumesItems.resumeid +"/edit"}>
+      <Link to={'/dashboard/resume/' + resumesItems.resumesItems.documentId +"/edit"}>
     <div  className='p-14 py-24 border 
     items-center flex 
     justify-center bg-secondary
